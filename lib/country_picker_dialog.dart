@@ -9,6 +9,8 @@ class PickerDialogStyle {
 
   final TextStyle? countryNameStyle;
 
+  final double? countryIconSize;
+
   final Widget? listTileDivider;
 
   final EdgeInsets? listTilePadding;
@@ -31,6 +33,7 @@ class PickerDialogStyle {
     this.countryNameStyle,
     this.listTileDivider,
     this.listTilePadding,
+    this.countryIconSize,
     this.padding,
     this.searchFieldCursorColor,
     this.searchFieldInputDecoration,
@@ -134,7 +137,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                         Image.asset(
                           'assets/flags/${_filteredCountries[index].code.toLowerCase()}.png',
                           package: 'intl_phone_field',
-                          width: 25,
+                          width: widget.style?.countryIconSize ?? 25,
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 5),
