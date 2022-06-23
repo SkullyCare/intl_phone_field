@@ -147,12 +147,11 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                                 TextStyle(fontWeight: FontWeight.w700),
                           ),
                         ),
-                        Flexible(
-                          child: Text(
-                            '(${_filteredCountries[index].name})',
-                            style: widget.style?.countryNameStyle ??
-                                TextStyle(fontWeight: FontWeight.w700),
-                          ),
+                        Text(
+                          '(${_filteredCountries[index].name})',
+                          style: widget.style?.countryNameStyle ??
+                              TextStyle(fontWeight: FontWeight.w700),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ),
