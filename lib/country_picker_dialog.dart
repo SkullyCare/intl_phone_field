@@ -124,14 +124,14 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
               child: ListView.builder(
                 shrinkWrap: true,
                 itemCount: _filteredCountries.length,
-                itemBuilder: (ctx, index) => Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: InkWell(
-                    onTap: () {
-                      _selectedCountry = _filteredCountries[index];
-                      widget.onCountryChanged(_selectedCountry);
-                      Navigator.of(context).pop();
-                    },
+                itemBuilder: (ctx, index) => InkWell(
+                  onTap: () {
+                    _selectedCountry = _filteredCountries[index];
+                    widget.onCountryChanged(_selectedCountry);
+                    Navigator.of(context).pop();
+                  },
+                  child: Padding(
+                    padding: widget.style?.listTilePadding ?? EdgeInsets.all(0),
                     child: Row(
                       children: [
                         Image.asset(
