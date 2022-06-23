@@ -126,7 +126,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                 itemCount: _filteredCountries.length,
                 itemBuilder: (ctx, index) => Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                       _selectedCountry = _filteredCountries[index];
                       widget.onCountryChanged(_selectedCountry);
