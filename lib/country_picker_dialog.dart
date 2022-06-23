@@ -23,6 +23,8 @@ class PickerDialogStyle {
 
   final double? width;
 
+  final Widget? windowLabelWidget;
+
   PickerDialogStyle({
     this.backgroundColor,
     this.countryCodeStyle,
@@ -34,6 +36,7 @@ class PickerDialogStyle {
     this.searchFieldInputDecoration,
     this.searchFieldPadding,
     this.width,
+    this.windowLabelWidget,
   });
 }
 
@@ -88,6 +91,8 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
         padding: widget.style?.padding ?? EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
+            if (widget.style?.windowLabelWidget != null)
+              widget.style!.windowLabelWidget!,
             Padding(
               padding: widget.style?.searchFieldPadding ?? EdgeInsets.all(0),
               child: TextField(
